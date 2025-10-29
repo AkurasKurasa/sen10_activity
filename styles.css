@@ -1,0 +1,120 @@
+body {
+        margin: 0;
+        background-color: #fdf6f0;
+        font-family: "Comic Sans MS", "Papyrus", cursive;
+        color: #333;
+        transition: background-color 0.5s, color 0.5s;
+    }
+
+    header {
+        background: linear-gradient(to right, #ffcccc, #ccffff);
+        text-align: center;
+        padding: 40px 0;
+        border-bottom: 6px ridge #cc00cc;
+    }
+
+    header h1 {
+        font-size: 3em;
+        color: #222;
+        text-shadow: 2px 2px 3px #fff;
+    }
+
+    nav {
+        background-color: #ffffcc;
+        padding: 12px;
+        text-align: center;
+        border-bottom: 3px dashed #999;
+    }
+
+    nav a {
+        color: #000099;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #ff0066;
+        text-decoration: underline wavy #ff0066;
+    }
+
+    button.theme-toggle {
+        background-color: #ff99cc;
+        border: 3px solid #cc66ff;
+        padding: 8px 14px;
+        font-weight: bold;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 40px;
+        background-color: #fffaf0;
+    }
+
+    .photo {
+        border: 8px groove #ff99ff;
+        background-color: #ffffe0;
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
+
+    .photo:hover {
+        transform: scale(1.05) rotate(2deg);
+    }
+
+    .photo img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 3px dashed #ffcc00;
+    }
+
+    .caption {
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(255,255,255,0.9);
+        color: #660066;
+    }
+
+    .contact {
+        background-color: #e6e6fa;
+        padding: 40px;
+        text-align: center;
+        border-top: 6px ridge #cc99ff;
+    }
+
+    .contact form {
+        display: inline-block;
+        text-align: left;
+        background-color: #ffffff;
+        padding: 20px;
+        border: 5px double #cc99cc;
+        box-shadow: 5px 5px 15px #aaa;
+    }
+
+    .contact input, .contact textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 2px solid #999;
+    }
+
+    .contact button {
+        background-color: #ff99cc;
+        color: #333;
+        border: 3px solid #cc66ff;
+        padding: 10px 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    footer {
+        background-color: #ccccff;
+        padding: 25px;
+        text-align: center;
+        border-top: 5px solid #9966ff;
+    }
