@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Gallery Website</title>
+<style>
+    body {
+        margin: 0;
+        background-color: #fdf6f0;
+        font-family: "Comic Sans MS", "Papyrus", cursive;
+        color: #333;
+        transition: background-color 0.5s, color 0.5s;
+    }
+
+    header {
+        background: linear-gradient(to right, #ffcccc, #ccffff);
+        text-align: center;
+        padding: 40px 0;
+        border-bottom: 6px ridge #cc00cc;
+    }
+
+    header h1 {
+        font-size: 3em;
+        color: #222;
+        text-shadow: 2px 2px 3px #fff;
+    }
+
+    nav {
+        background-color: #ffffcc;
+        padding: 12px;
+        text-align: center;
+        border-bottom: 3px dashed #999;
+    }
+
+    nav a {
+        color: #000099;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #ff0066;
+        text-decoration: underline wavy #ff0066;
+    }
+
+    button.theme-toggle {
+        background-color: #ff99cc;
+        border: 3px solid #cc66ff;
+        padding: 8px 14px;
+        font-weight: bold;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        padding: 40px;
+        background-color: #fffaf0;
+    }
+
+    .photo {
+        border: 8px groove #ff99ff;
+        background-color: #ffffe0;
+        transition: transform 0.3s;
+        cursor: pointer;
+    }
+
+    .photo:hover {
+        transform: scale(1.05) rotate(2deg);
+    }
+
+    .photo img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 3px dashed #ffcc00;
+    }
+
+    .caption {
+        text-align: center;
+        padding: 10px;
+        background-color: rgba(255,255,255,0.9);
+        color: #660066;
+    }
+
+    .contact {
+        background-color: #e6e6fa;
+        padding: 40px;
+        text-align: center;
+        border-top: 6px ridge #cc99ff;
+    }
+
+    .contact form {
+        display: inline-block;
+        text-align: left;
+        background-color: #ffffff;
+        padding: 20px;
+        border: 5px double #cc99cc;
+        box-shadow: 5px 5px 15px #aaa;
+    }
+
+    .contact input, .contact textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 2px solid #999;
+    }
+
+    .contact button {
+        background-color: #ff99cc;
+        color: #333;
+        border: 3px solid #cc66ff;
+        padding: 10px 15px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    footer {
+        background-color: #ccccff;
+        padding: 25px;
+        text-align: center;
+        border-top: 5px solid #9966ff;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>My Interactive Gallery</h1>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle">🌈 Change Theme</button>
+    </nav>
+
+    <section class="gallery" id="gallery">
+        <div class="photo"><img src="https://picsum.photos/400?1" alt="1"><div class="caption">Vibrant #1</div></div>
+        <div class="photo"><img src="https://picsum.photos/400?2" alt="2"><div class="caption">Vibrant #2</div></div>
+        <div class="photo"><img src="https://picsum.photos/400?3" alt="3"><div class="caption">Vibrant #3</div></div>
+        <div class="photo"><img src="https://picsum.photos/400?4" alt="4"><div class="caption">Vibrant #4</div></div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <label>Message:</label>
+            <textarea id="message" rows="4" placeholder="Your message..."></textarea>
+            <button type="submit">Send!</button>
+        </form>
+    </section>
+
+    <footer>
+        © 2025 My Ugly Interactive Portfolio — Built with passion and poor taste.
+    </footer>
+
+<script>
+    // Pop-up on load (annoying)
+    window.onload = function() {
+        alert("🎨 Welcome to my ugly but interactive gallery!");
+    };
+
+    // Theme switcher
+    const btn = document.querySelector(".theme-toggle");
+    const themes = [
+        {bg: "#fdf6f0", text: "#333"},
+        {bg: "#000", text: "#ff99ff"},
+        {bg: "#ccffcc", text: "#003366"},
+        {bg: "#ffef96", text: "#990000"},
+    ];
+    let currentTheme = 0;
+
+    btn.addEventListener("click", () => {
+        currentTheme = (currentTheme + 1) % themes.length;
+        document.body.style.backgroundColor = themes[currentTheme].bg;
+        document.body.style.color = themes[currentTheme].text;
+        alert("Theme changed! Hope it’s better (it’s probably not).");
+    });
+
+    // Hover sound effect
+    const hoverSound = new Audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg");
+    document.querySelectorAll(".photo").forEach(photo => {
+        photo.addEventListener("mouseenter", () => hoverSound.play());
+    });
+
+    // Basic form validation
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+            alert("Please fill out all fields. Don’t be shy!");
+            return;
+        }
+
+        alert(`Thanks ${name}! Your message has been sent into the void.`);
+        form.reset();
+    });
+</script>
+</body>
+</html>
