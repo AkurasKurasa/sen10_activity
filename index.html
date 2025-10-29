@@ -3,259 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Gallery Website</title>
+<title>Ugly UI Example</title>
 <style>
-    body {
-        margin: 0;
-        background-color: #fdf6f0;
-        font-family: "Comic Sans MS", "Papyrus", cursive;
-        color: #333;
-        transition: background-color 0.5s, color 0.5s;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
 
-    header {
-        background: linear-gradient(to right, #ffcccc, #ccffff);
-        text-align: center;
-        padding: 40px 0;
-        border-bottom: 6px ridge #cc00cc;
-    }
+  header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
 
-    header h1 {
-        font-size: 3em;
-        color: #222;
-        text-shadow: 2px 2px 3px #fff;
-    }
+  img {
+    max-width: 90%;
+    margin: 40px auto;
+    border: 5px solid #999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
 
-    nav {
-        background-color: #ffffcc;
-        padding: 12px;
-        text-align: center;
-        border-bottom: 3px dashed #999;
-    }
+  section {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+    text-align: left;
+  }
 
-    nav a {
-        color: #000099;
-        text-decoration: none;
-        margin: 0 20px;
-        font-weight: bold;
-    }
+  h2 {
+    color: #333;
+  }
 
-    nav a:hover {
-        color: #ff0066;
-        text-decoration: underline wavy #ff0066;
-    }
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+  }
 
-    button.theme-toggle {
-        background-color: #ff99cc;
-        border: 3px solid #cc66ff;
-        padding: 8px 14px;
-        font-weight: bold;
-        margin-left: 20px;
-        cursor: pointer;
-    }
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 25px;
-        padding: 40px;
-        background-color: #fffaf0;
-    }
-
-    .photo {
-        border: 8px groove #ff99ff;
-        background-color: #ffffe0;
-        transition: transform 0.3s;
-        cursor: pointer;
-    }
-
-    .photo:hover {
-        transform: scale(1.05) rotate(2deg);
-    }
-
-    .photo img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-bottom: 3px dashed #ffcc00;
-    }
-
-    .caption {
-        text-align: center;
-        padding: 10px;
-        background-color: rgba(255,255,255,0.9);
-        color: #660066;
-    }
-
-    .contact {
-        background-color: #e6e6fa;
-        padding: 40px;
-        text-align: center;
-        border-top: 6px ridge #cc99ff;
-    }
-
-    .contact form {
-        display: inline-block;
-        text-align: left;
-        background-color: #ffffff;
-        padding: 20px;
-        border: 5px double #cc99cc;
-        box-shadow: 5px 5px 15px #aaa;
-    }
-
-    .contact input, .contact textarea {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 2px solid #999;
-    }
-
-    .contact button {
-        background-color: #ff99cc;
-        color: #333;
-        border: 3px solid #cc66ff;
-        padding: 10px 15px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    /* 🎨 New “Improvements” section styles */
-    .improvements {
-        background-color: #fff0f5;
-        padding: 50px 20px;
-        text-align: center;
-        border-top: 6px dotted #ff66b2;
-        border-bottom: 6px dotted #66ccff;
-    }
-
-    .improvements h2 {
-        font-size: 2.2em;
-        color: #660033;
-        text-shadow: 2px 2px 4px #fff;
-    }
-
-    .improvements ul {
-        list-style: "💡 ";
-        text-align: left;
-        max-width: 800px;
-        margin: 30px auto;
-        background-color: #ffffcc;
-        border: 4px double #ff99cc;
-        padding: 20px;
-        font-size: 1.1em;
-        line-height: 1.7em;
-    }
-
-    .improvements li {
-        margin-bottom: 12px;
-    }
-
-    footer {
-        background-color: #ccccff;
-        padding: 25px;
-        text-align: center;
-        border-top: 5px solid #9966ff;
-    }
+  footer {
+    background-color: #eee;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #444;
+  }
 </style>
 </head>
 <body>
-    <header>
-        <h1>My Interactive Gallery</h1>
-    </header>
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#improvements">Improvements</a>
-        <a href="#contact">Contact</a>
-        <button class="theme-toggle">🌈 Change Theme</button>
-    </nav>
+  <header>
+    <h1>Ugly UI Showcase</h1>
+  </header>
 
-    <section class="gallery" id="gallery">
-        <div class="photo"><img src="https://picsum.photos/400?1" alt="1"><div class="caption">Vibrant #1</div></div>
-        <div class="photo"><img src="https://picsum.photos/400?2" alt="2"><div class="caption">Vibrant #2</div></div>
-        <div class="photo"><img src="https://picsum.photos/400?3" alt="3"><div class="caption">Vibrant #3</div></div>
-        <div class="photo"><img src="https://picsum.photos/400?4" alt="4"><div class="caption">Vibrant #4</div></div>
+  <main>
+    <img src="yale.png" alt="Ugly UI Example">
+
+    <section>
+      <h2>How This UI Can Be Improved</h2>
+      <p>
+        This interface suffers from a lack of visual hierarchy, poor alignment, and inconsistent spacing, which makes it difficult for users to focus on key content. The overwhelming use of bright, clashing colors—combined with multiple competing font styles—creates a sense of visual noise that distracts from the actual information being presented. The inconsistent sizing and placement of text blocks, buttons, and links make navigation confusing and unintuitive, while the lack of clear visual structure forces users to spend extra effort locating what they need.
+
+To improve this UI, the first step would be to simplify the overall layout and establish a clear hierarchy through consistent typography, color usage, and spacing. Limiting the design to two or three complementary colors and a single readable font family would greatly enhance readability and cohesiveness. Elements such as headings, links, and buttons should be clearly differentiated through consistent styling and spacing. The background could be toned down to reduce visual strain, allowing the main content to stand out naturally.
+
+Additionally, applying modern design principles—such as proper use of white space, grid-based alignment, and accessible color contrast—would make the site feel more balanced and professional. Grouping related content under well-defined sections and using appropriate visual cues (like icons or headings) would improve navigation flow. Overall, the goal should be to create a cleaner, more organized interface that feels intentional, guiding the users eye smoothly from one element to another without overwhelming them.
+      </p>
     </section>
+  </main>
 
-    <!-- 💡 New Section: Improvement Ideas -->
-    <section class="improvements" id="improvements">
-        <h2>How to Improve This “Ugly” UI</h2>
-        <ul>
-            <li>🎨 Use a consistent and professional color palette (avoid clashing pastels and gradients).</li>
-            <li>🧱 Reduce border styles — remove ridges, grooves, and dashed borders for a cleaner layout.</li>
-            <li>💬 Replace Comic Sans and Papyrus fonts with modern web-safe fonts like Roboto or Open Sans.</li>
-            <li>📐 Simplify spacing — make consistent padding and margin for elements to improve readability.</li>
-            <li>🖼️ Limit hover animations and avoid distracting alerts or sound effects.</li>
-            <li>📱 Optimize for accessibility (contrast, font size, alt text, and mobile responsiveness).</li>
-            <li>⚙️ Introduce a modern layout system using CSS Flexbox or Grid for alignment.</li>
-            <li>🌙 Replace the alert-based theme switcher with a smooth, persistent dark/light mode toggle.</li>
-        </ul>
-        <p><strong>In short:</strong> A good UI focuses on clarity, consistency, and comfort — not chaos!</p>
-    </section>
+  <footer>
+    © 2025 UI Improvement Project
+  </footer>
 
-    <section class="contact" id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <label>Name:</label>
-            <input type="text" id="name" placeholder="Enter your name">
-            <label>Email:</label>
-            <input type="email" id="email" placeholder="Enter your email">
-            <label>Message:</label>
-            <textarea id="message" rows="4" placeholder="Your message..."></textarea>
-            <button type="submit">Send!</button>
-        </form>
-    </section>
-
-    <footer>
-        © 2025 My Ugly Interactive Portfolio — Built with passion and poor taste.
-    </footer>
-
-<script>
-    // Pop-up on load (annoying)
-    window.onload = function() {
-        alert("🎨 Welcome to my ugly but interactive gallery!");
-    };
-
-    // Theme switcher
-    const btn = document.querySelector(".theme-toggle")
-    const themes = [
-        {bg: "#fdf6f0", text: "#333"},
-        {bg: "#000", text: "#ff99ff"},
-        {bg: "#ccffcc", text: "#003366"},
-        {bg: "#ffef96", text: "#990000"},
-    ];
-    let currentTheme = 0;
-
-    btn.addEventListener("click", () => {
-        currentTheme = (currentTheme + 1) % themes.length;
-        document.body.style.backgroundColor = themes[currentTheme].bg;
-        document.body.style.color = themes[currentTheme].text;
-        alert("Theme changed! Hope it’s better (it’s probably not).");
-    });
-
-    // Hover sound effect
-    const hoverSound = new Audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg");
-    document.querySelectorAll(".photo").forEach(photo => {
-        photo.addEventListener("mouseenter", () => hoverSound.play());
-    });
-
-    // Basic form validation
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", e => {
-        e.preventDefault();
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !message) {
-            alert("Please fill out all fields. Don’t be shy!");
-            return;
-        }
-
-        alert(`Thanks ${name}! Your message has been sent into the void.`);
-        form.reset();
-    });
-</script>
 </body>
 </html>
